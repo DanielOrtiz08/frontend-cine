@@ -1,0 +1,60 @@
+<div>
+  <!-- Formulario de datos del cliente -->
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" [(ngModel)]="cliente.numeroDocumento" placeholder="Documento">
+    <label for="numeroDocumento">Número de Documento</label>
+  </div>
+  
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" [(ngModel)]="cliente.nombresPersona" placeholder="Nombres">
+    <label for="nombresPersona">Nombres</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" [(ngModel)]="cliente.apellidosPersona" placeholder="Apellidos">
+    <label for="apellidosPersona">Apellidos</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="date" class="form-control" [(ngModel)]="cliente.fechaNacimientoPersona" placeholder="Fecha de Nacimiento">
+    <label for="fechaNacimientoPersona">Fecha de Nacimiento</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="number" class="form-control" [(ngModel)]="cliente.idCargo" placeholder="ID Cargo">
+    <label for="idCargo">ID Cargo</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="number" class="form-control" [(ngModel)]="cliente.idUbicacion" placeholder="ID Ubicación">
+    <label for="idUbicacion">ID Ubicación</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="number" class="form-control" [(ngModel)]="cliente.idPlan" placeholder="ID Plan">
+    <label for="idPlan">ID Plan</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="tel" class="form-control" [(ngModel)]="cliente.celular" placeholder="Celular">
+    <label for="celular">Celular</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" [(ngModel)]="cliente.emailPersona" placeholder="Correo Electrónico">
+    <label for="emailPersona">Correo Electrónico</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="password" class="form-control" [(ngModel)]="cliente.contraseniaPersona" placeholder="Contraseña">
+    <label for="contraseniaPersona">Contraseña</label>
+  </div>
+
+  <!-- Botón para agregar cliente -->
+  <button class="btn btn-primary" (click)="agregarCliente()">Agregar Cliente</button>
+
+  <!-- Mensaje de respuesta -->
+  <div *ngIf="mensajeRespuesta" class="alert alert-info mt-3">
+    {{ mensajeRespuesta }}
+  </div>
+</div>

@@ -1,0 +1,108 @@
+<div class="d-flex justify-content-center pt-2" style="margin-left: 100px;">
+<div class="container col-md-8 mx-auto mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="mt-4">
+          <div class="card-body">
+            <h5>{{ carteleraEditada.idCartelera ? 'Editar cartelera' : 'Agregar nueva cartelera' }}</h5>
+            <form (ngSubmit)="carteleraEditada.idCartelera ? updateCartelera() : createCartelera()" #formulario="ngForm" class="row g-3">
+              <div class="col-md-3">
+                <input
+                  class="form-control"
+                  placeholder="ID Pelicula"
+                  [(ngModel)]="carteleraEditada.idPelicula"
+                  name="idPelicula"
+                  required
+                />
+              </div>
+              <div class="col-md-3">
+                <input
+                  class="form-control"
+                  placeholder="ID Cine"
+                  [(ngModel)]="carteleraEditada.idCine"
+                  name="idCine"
+                  required
+                />
+              </div>
+              <div class="col-md-3">
+                <input
+                  class="form-control"
+                  placeholder="Fecha inicio"
+                  [(ngModel)]="carteleraEditada.fechaInicioCartelera"
+                  name="fechaInicioCartelera"
+                  type="date"
+                  required
+                />
+              </div>
+              <div class="col-md-3">
+                <input
+                  class="form-control"
+                  placeholder="Fecha finalización"
+                  [(ngModel)]="carteleraEditada.fechaFinalCartelera"
+                  name="fechaFinalCartelera"
+                  type="date"
+                  required
+                />
+              </div>
+              <div class="col-12 text-end">
+                <button type="submit" class="btn btn-success" [disabled]="formulario.invalid">
+                  {{ carteleraEditada.idCartelera ? 'Actualizar' : 'Crear' }}
+                </button>
+                <button type="button" class="btn btn-secondary" *ngIf="carteleraEditada.idCartelera" (click)="cancelarEdicion()">
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">Carteleras</h5>
+        <div *ngIf="carteleras && carteleras.length > 0; else noCartelera">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead class="table-dark">
+                <tr>
+                  <th>ID Pelicula</th>
+                  <th>ID Cine</th>
+                  <th>Fecha inicio</th>
+                  <th>Fecha finalización</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let cartelera of carteleras">
+                  <td>{{cartelera.idPelicula}}</td>
+                  <td>{{cartelera.idCine}}</td>
+                  <td>{{cartelera.fechaInicioCartelera}}</td>
+                  <td>{{cartelera.fechaFinalCartelera}}</td>
+                  <td>
+                    <button
+                      class="btn btn-warning btn-sm"
+                      (click)="openEdit(cartelera)"
+                    >
+                      Editar
+                    </button>
+                    <button
+                      class="btn btn-danger btn-sm"
+                      (click)="deleteCartelera(cartelera)"
+                    >
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #noCartelera>
+        <p class="text-center text-muted">No hay carteleras disponibles.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>
+</div>

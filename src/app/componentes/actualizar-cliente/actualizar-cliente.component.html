@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Actualizar Cliente</h2>
+
+  <!-- Formulario de actualización de cliente -->
+  <form (ngSubmit)="actualizarCliente()">
+    <div class="form-group">
+      <label for="numeroDocumento">Número de Documento</label>
+      <input type="text" class="form-control" id="numeroDocumento" [(ngModel)]="cliente.numeroDocumento" name="numeroDocumento" required>
+    </div>
+    <div class="form-group">
+      <label for="nombresPersona">Nombres</label>
+      <input type="text" class="form-control" id="nombresPersona" [(ngModel)]="cliente.nombresPersona" name="nombresPersona" required>
+    </div>
+    <div class="form-group">
+      <label for="apellidosPersona">Apellidos</label>
+      <input type="text" class="form-control" id="apellidosPersona" [(ngModel)]="cliente.apellidosPersona" name="apellidosPersona" required>
+    </div>
+    <div class="form-group">
+      <label for="fechaNacimientoPersona">Fecha de Nacimiento</label>
+      <input type="date" class="form-control" id="fechaNacimientoPersona" [(ngModel)]="cliente.fechaNacimientoPersona" name="fechaNacimientoPersona" required>
+    </div>
+    <div class="form-group">
+      <label for="idCargo">ID Cargo</label>
+      <input type="number" class="form-control" id="idCargo" [(ngModel)]="cliente.idCargo" name="idCargo" required>
+    </div>
+    <div class="form-group">
+      <label for="idUbicacion">ID Ubicación</label>
+      <input type="number" class="form-control" id="idUbicacion" [(ngModel)]="cliente.idUbicacion" name="idUbicacion" required>
+    </div>
+    <div class="form-group">
+      <label for="idPlan">ID Plan</label>
+      <input type="number" class="form-control" id="idPlan" [(ngModel)]="cliente.idPlan" name="idPlan" required>
+    </div>
+    <div class="form-group">
+      <label for="celular">Celular</label>
+      <input type="text" class="form-control" id="celular" [(ngModel)]="cliente.celular" name="celular" required>
+    </div>
+    <div class="form-group">
+      <label for="emailPersona">Correo Electrónico</label>
+      <input type="email" class="form-control" id="emailPersona" [(ngModel)]="cliente.emailPersona" name="emailPersona" required>
+    </div>
+    <div class="form-group">
+      <label for="contraseniaPersona">Contraseña</label>
+      <input type="password" class="form-control" id="contraseniaPersona" [(ngModel)]="cliente.contraseniaPersona" name="contraseniaPersona" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Actualizar Cliente</button>
+  </form>
+
+  <!-- Mensaje de respuesta -->
+  <div *ngIf="mensajeRespuesta" class="alert alert-info mt-3">
+    {{ mensajeRespuesta }}
+  </div>
+</div>

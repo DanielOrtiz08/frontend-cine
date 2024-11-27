@@ -1,0 +1,55 @@
+
+<div>
+  <div>
+    <div class="container col-md-20 mx-auto mt-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Persona</h5>
+              <div *ngIf="clientes && clientes.length > 0; else noCliente">
+                <div class="table-responsive mt-4">
+                  <table class="table table-striped table-hover ">
+                    <thead class="table-dark">
+                      <tr>
+                        <th>ID PERSONA</th>
+                        <th>NÚMERO DOCUMENTO</th>
+                        <th>NOMBRE PERSONA</th>
+                        <th>APELLIDO PERSONA</th>
+                        <th>FECHA NACIMIENTO</th>
+                        <th>ID CARGO</th>
+                        <th>ID UBICACIÓN</th>
+                        <th>ID PLAN</th>
+                        <th>CELULAR</th>
+                        <th>CORREO</th>
+                        <th>CONTRASEÑA</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let persona of clientes">
+                        <td>{{ persona.idPersona }}</td>
+                        <td>{{ persona.numeroDocumento }}</td>
+                        <td>{{ persona.nombresPersona }}</td>
+                        <td>{{ persona.apellidosPersona }}</td>
+                        <td>{{ persona.fechaNacimientoPersona | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ persona.idCargo }}</td>
+                        <td>{{ persona.idUbicacion }}</td>
+                        <td>{{ persona.idPlan }}</td>
+                        <td>{{ persona.celular }}</td>
+                        <td>{{ persona.emailPersona }}</td>
+                        <td>{{ persona.contraseniaPersona }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <ng-template #noCliente>
+                <p class="text-center text-muted">No hay funciones disponibles.</p>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

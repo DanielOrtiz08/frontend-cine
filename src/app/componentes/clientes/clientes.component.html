@@ -1,0 +1,16 @@
+<div>
+  <div class="container col-md-8 mx-auto mt-4">
+    <!-- Botones centrados -->
+    <div class="btn-group mb-4 d-flex justify-content-center w-100">
+      <button class="btn btn-primary me-2" [routerLink]="['/clients/getallclients']">Mostrar Clientes</button>
+      <button class="btn btn-primary me-2" [routerLink]="['/clients/addCliente']">Agregar cliente</button>
+      <button class="btn btn-primary me-2" [routerLink]="['/clients/deleteCliente']">Eliminar cliente</button>
+      <button class="btn btn-primary me-2" [routerLink]="['/clients/updateCliente']">Actualizar Cliente</button>
+    </div>
+
+    <!-- Aquí se mostrará el contenido correspondiente debajo de los botones -->
+    <div class="content">
+      <router-outlet></router-outlet> <!-- El contenido cambiará según la ruta seleccionada -->
+    </div>
+  </div>
+</div>
